@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = () => {
-      axios.get('https://api.nasa.gov/planetary/apod?api_key=PpXg8JF3ObUCeWird0AyyyxiStfYP8vCPFZp3gmb')
+      axios.get(`https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}`)
         .then(res => {
           setApiData(res.data)
         })
