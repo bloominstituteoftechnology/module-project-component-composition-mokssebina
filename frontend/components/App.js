@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Card from './Card/Card'
+import styled from 'styled-components';
 import { API_KEY } from '../../constants'
 
+
+const AppWrapper = styled.div`
+width: 85%;
+marginLeft: 7.5%;
+padding: 5px
+`
 
 function App() {
 
@@ -21,9 +28,9 @@ function App() {
 
   if (!apiData) return "Fetching data!"
   return (
-    <section>
+    <AppWrapper>
       <Card title={apiData.title} url={apiData.url} description={apiData.explanation} mediaType={apiData.media_type} date={apiData.date} />
-    </section>
+    </AppWrapper>
   )
 }
 
